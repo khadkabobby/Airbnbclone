@@ -1,0 +1,185 @@
+@import "../../styles/global.scss";
+header {
+  border-bottom: 1px solid #717171;
+  height: 80px;
+  display: flex;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include devices(mobile) {
+      justify-content: center;
+    }
+    .logo {
+      height: 32px;
+      width: 110px;
+      cursor: pointer;
+      position: relative;
+      img {
+        height: 100%;
+      }
+      &::after {
+        content: "airbnb";
+        color: #ff5a60;
+        position: absolute;
+        left: 36px;
+        font-size: 24px;
+        font-weight: 600;
+        @include devices(tablet) {
+          display: none;
+        }
+      }
+      @include devices(tablet) {
+        width: 50px;
+      }
+      @include devices(mobile) {
+        display: none;
+      }
+    }
+    .searchbar {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      padding: 8px 6px 8px 18px;
+      border: 1px solid #dddddd;
+      border-radius: 40px;
+      font: size 14px;
+      font-weight: 500;
+      color: #222;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      @include devices(mobile) {
+        display: none;
+      }
+      .location {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &::after {
+          content: "";
+          width: 1px;
+          height: 20px;
+          background: #717171;
+          position: absolute;
+          left: 28%;
+        }
+      }
+      .time {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &::after {
+          content: "";
+          width: 1px;
+          height: 20px;
+          background: #717171;
+          position: absolute;
+          left: 56%;
+        }
+      }
+
+      .guest {
+        color: #717171;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .searchIcon {
+        margin-left: -15px;
+        width: 30px;
+        height: 30px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .mobilesearchbar {
+      display: none;
+      width: 88vw;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 6px 8px 18px;
+      border: 1px solid #dddddd;
+      border-radius: 40px;
+      font: size 14px;
+      font-weight: 500;
+      color: #222;
+      position: relative;
+      cursor: pointer;
+      .searchbar-left {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        .searchIcon {
+          display: flex;
+          align-items: center;
+        }
+        .searchindex {
+          display: flex;
+          flex-direction: column;
+          .location {
+            font-size: 15px;
+          }
+          .both {
+            display: flex;
+            color: #717171;
+            font-size: 13px;
+            font-weight: normal;
+            gap: 3px;
+          }
+        }
+      }
+      .searchbar-right {
+        display: flex;
+        align-items: center;
+      }
+      @include devices(mobile) {
+        display: flex;
+      }
+    }
+    .rightbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      width: 262px;
+      @include devices(mobile) {
+        display: none;
+      }
+      .listinghome {
+        border: 1px solid transparent;
+        padding: 6px 15px;
+        border-radius: 15px;
+        font-size: 14px;
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+      .earthIcon {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        border: 1px solid transparent;
+        padding: 6px;
+        border-radius: 20px;
+        &:hover {
+          background-color: #dddddd;
+        }
+      }
+      .register {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border: 1px solid #ddd;
+        border-radius: 18px;
+        padding: 0 4px;
+        margin-left: 6px;
+      }
+    }
+  }
+}
