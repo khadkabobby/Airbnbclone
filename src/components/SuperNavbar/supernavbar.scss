@@ -1,8 +1,11 @@
 @import "../../styles/global.scss";
 header {
-  border-bottom: 1px solid #717171;
   height: 80px;
   display: flex;
+  border-bottom: 0.5px solid #dedede;
+  @include devices(mobile) {
+    border-bottom: 0;
+  }
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -176,8 +179,8 @@ header {
         align-items: center;
         gap: 4px;
         border: 1px solid #ddd;
-        border-radius: 18px;
-        padding: 0 4px;
+        border-radius: 20px;
+        padding: 4px 4px 4px 12px;
         margin-left: 6px;
       }
     }

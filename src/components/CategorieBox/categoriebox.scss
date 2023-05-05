@@ -1,0 +1,39 @@
+.borderbox {
+  margin-bottom: 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+  min-width: fit-content;
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  color: #717171;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 2px solid #717171;
+    color: #000;
+  }
+  .categoriesbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+    min-width: fit-content;
+    gap: 5px;
+    cursor: pointer;
+
+    .categoriesImg {
+      width: 24px;
+      img {
+        width: 100%;
+      }
+    }
+    .label {
+      font-size: 12px;
+    }
+  }
+}
+.selected {
+  border-bottom: 2px solid #222;
+}

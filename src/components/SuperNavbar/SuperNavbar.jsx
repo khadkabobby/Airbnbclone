@@ -39,14 +39,14 @@ const SuperNavbar = () => (
             </div>
           </div>
         </div>
-        <dvi className="searchbar-right">
+        <div className="searchbar-right">
           <Icon
             icon="material-symbols:build-circle-outline-rounded"
             color="#717171"
             width="32"
             height="32"
           />
-        </dvi>
+        </div>
       </div>
       <div className="rightbar">
         <div className="listinghome">Airbnb your home</div>

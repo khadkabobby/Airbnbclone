@@ -1,0 +1,79 @@
+@import "../../styles/global.scss";
+.mininavbar {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  .mini-group {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    @include devices(mobile) {
+      width: 100% !important;
+    }
+
+    .categories {
+      max-width: 1170px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        cursor: pointer;
+        @include devices(mobile) {
+          display: none;
+        }
+      }
+      .prevbutton {
+        border: 1px solid transparent;
+        position: absolute;
+        left: 0;
+        padding: 17px 10px 17px 0;
+      }
+      .nextbutton {
+        border: 1px solid transparent;
+        position: absolute;
+        right: 0;
+        padding: 17px 0 15px 17px;
+      }
+      .carousel {
+        display: flex;
+        gap: 45px;
+        justify-content: space-between;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        left: 0;
+        @include devices(mobile) {
+          padding-left: 25px;
+          align-items: start;
+          overflow-x: scroll;
+          gap: 14px;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+      .nonactive {
+        display: none;
+      }
+    }
+    .filters {
+      max-width: 90px;
+      min-width: 90px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #717171;
+      padding: 15px 13px;
+      border-radius: 12px;
+      font-size: 12px;
+      cursor: pointer;
+      @include devices(mobile) {
+        display: none;
+      }
+    }
+  }
+}
