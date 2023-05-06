@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 :root {
   font-size: 62.5%;
@@ -54,6 +53,11 @@ a {
 
   @if $breakpoint == mobile {
     @media only screen and (max-width: 670px) {
+      @content;
+    }
+  }
+  @if $breakpoint == minimobile {
+    @media only screen and (max-width: 549px) {
       @content;
     }
   }

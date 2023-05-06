@@ -1,13 +1,13 @@
 import React from "react";
 import SuperNavbar from "./components/SuperNavbar/SuperNavbar";
 import MiniNavbar from "./components/MiniNavbar/MiniNavbar";
-import ListingCard from "./components/ListingCard/ListingCard";
+import Listingpage from "./pages/Listingpage/Listingpage";
 
 const App = () => (
   <React.Fragment>
     <SuperNavbar />
     <MiniNavbar />
-    <ListingCard />
+    <Listingpage />
   </React.Fragment>
 );
 
