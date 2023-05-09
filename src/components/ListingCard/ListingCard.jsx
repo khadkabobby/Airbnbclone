@@ -1,26 +1,39 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./listingcard.scss";
 
 import { Icon } from "@iconify/react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const ListingCard = () => {
+const ListingCard = ({ element }) => {
+  const { url } = useSelector((state) => state.home);
+  const navigate = useNavigate();
+  {
+    console.log(`hello ${url}`);
+  }
+  // const { name, address, description, image, star, ...rest } = element;
+  // console.log(name, address, description, image);
+  // const BaseUrl = "https://royalapi.lancemeup.com";
+  // console.log(`${BaseUrl / image}`);
   return (
     <>
-      <div className="card">
+      <div className="card" onClick={() => navigate(`/hotel/${element.id}`)}>
         <div className="img">
           <img
-            src="https://a0.muscache.com/im/pictures/570296bc-a40d-40db-877e-e8d59def2ad6.jpg?im_w=720"
+            src={`https://royalapi.lancemeup.com${element.image}`}
             alt="listing Image"
+            crossorigin="anonymous"
           />
         </div>
+
         <div className="title">
-          <h4 className="location">Surry Hills, Australia</h4>
+          <h4 className="location">{element?.address}</h4>
           <div className="rating">
             <Icon icon="ic:outline-star" />
-            <p className="rating-point">4.4</p>
+            <p className="rating-point">{element?.star}</p>
           </div>
         </div>
-        <p className="owner"> Stay with Bron . Business owner </p>
+        <p className="owner"> Stay with Bobby Khadka . Business owner </p>
         <p className="date">Jun 18-24</p>
         <p className="price">
           <span>$108</span> night

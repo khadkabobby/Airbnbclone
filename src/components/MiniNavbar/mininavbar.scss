@@ -1,6 +1,9 @@
 @import "../../styles/global.scss";
 .mininavbar {
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  background: #fff;
+  position: sticky;
+  top: 80px;
+  z-index: 1;
   .mini-group {
     display: flex;
     align-items: center;
@@ -16,7 +19,6 @@
       align-items: center;
       overflow: hidden;
       position: relative;
-      box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
       .button {
         display: flex;
         justify-content: center;
@@ -76,4 +78,7 @@
       }
     }
   }
+}
+.boxshadow {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }

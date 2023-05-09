@@ -1,0 +1,260 @@
+@import "../../styles/global.scss";
+.housing__component {
+  .mobile__image__section {
+    width: 100%;
+    display: none;
+    position: relative;
+    @include devices(mobile) {
+      display: flex;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    .number_of_photos {
+      position: absolute;
+      bottom: 15px;
+      right: 10px;
+      padding: 3px 8px;
+      background: #5f5849;
+      color: #fff;
+      font-size: 13px;
+      border-radius: 3px;
+      letter-spacing: 1.2px;
+    }
+  }
+  .image__section {
+    width: 83%;
+    margin: 20px auto 0;
+    @include devices(tablet) {
+      width: 94%;
+    }
+    .image__section-header {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 0;
+      h2 {
+        font-size: 26px;
+        font-weight: 400;
+      }
+      .header__about {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        .header__left {
+          display: flex;
+          gap: 6px;
+          display: flex;
+          .rating {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            p {
+              font-size: 14px;
+              font-weight: 500;
+            }
+          }
+          .reviews {
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 500;
+          }
+          .location {
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 500;
+          }
+        }
+        .header__right {
+          display: flex;
+          gap: 15px;
+          cursor: pointer;
+          @include devices(mobile) {
+            display: none;
+          }
+          .share {
+            display: flex;
+            text-decoration: underline;
+            align-items: center;
+            gap: 10px;
+            padding: 5px;
+            border: 1px solid transparent;
+            user-select: none;
+            &:hover {
+              border: 1px solid #f3f3f3;
+              padding: 5px;
+              border-radius: 10px;
+              background-color: #f3f3f3;
+            }
+          }
+          .save {
+            display: flex;
+            text-decoration: underline;
+            align-items: center;
+            gap: 10px;
+            padding: 5px;
+            border: 1px solid transparent;
+            user-select: none;
+            &:hover {
+              border: 1px solid #f3f3f3;
+              padding: 5px;
+              border-radius: 10px;
+              background-color: #f3f3f3;
+            }
+          }
+        }
+      }
+    }
+
+    // image container
+    .image__container {
+      display: flex;
+      margin: 20px auto 0;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 50vh;
+      justify-content: space-between;
+      @include devices(mobile) {
+        display: none;
+      }
+      .left__image {
+        width: 49%;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .right__image {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        flex-wrap: wrap;
+        row-gap: 10px;
+
+        &-small {
+          width: 49.2%;
+          height: 49%;
+          @include devices(tablet) {
+            height: 100%;
+          }
+          img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .horizontalline {
+      display: none;
+      margin-top: 25px;
+      @include devices(mobile) {
+        display: flex;
+      }
+    }
+    // reserve section
+    .reserve__section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      .room__about {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 58%;
+        @include devices(mobile) {
+          width: 100%;
+          justify-content: space-between;
+        }
+        .owner {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .owner__name {
+            font-size: 23px;
+            font-weight: 500;
+          }
+          .owner__image {
+            display: flex;
+            width: 40px;
+            border-radius: 100%;
+            overflow: hidden;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .room__facilites {
+          margin: 10px auto 0;
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          @include devices(tablet) {
+            row-gap: 14px;
+          }
+
+          .facility {
+            flex-basis: 30%;
+            display: flex;
+            border: 1px solid #ddd;
+            align-items: center;
+            gap: 12px;
+            border-radius: 12px;
+            padding: 18px 20px;
+            font-weight: 500;
+            @include devices(tablet) {
+              flex-basis: 48%;
+            }
+            @include devices(mobile) {
+              flex-basis: 30%;
+              flex-direction: column;
+              align-items: flex-start;
+              p {
+                font-size: 16px;
+                font-weight: 400;
+                @include devices(mobile) {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .reserve__card {
+        width: 34%;
+        @include devices(mobile) {
+          width: 0;
+        }
+      }
+    }
+  }
+  .wish__popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    z-index: 999;
+
+    .wish__popup {
+      position: fixed;
+      width: 550px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      z-index: 999;
+      border-radius: 12px;
+      @include devices(mobile) {
+        top: 77%;
+        width: 100%;
+      }
+    }
+  }
+}

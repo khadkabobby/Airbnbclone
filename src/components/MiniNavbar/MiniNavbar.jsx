@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./mininavbar.scss";
 
 import { categories } from "../index";
@@ -12,7 +12,6 @@ const MiniNavbar = () => {
   const [selectCategories, setSelectCategories] = useState(1);
 
   const carouselRef = useRef(null);
-
   const btnpressprev = () => {
     let width = carouselRef.current.clientWidth;
     carouselRef.current.scrollLeft = -width;

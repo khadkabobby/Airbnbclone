@@ -1,0 +1,44 @@
+@import "../../styles/global.scss";
+.wishlists {
+  margin-top: 50px !important;
+  width: 83% !important;
+  s h2 {
+    font-size: 30px;
+  }
+  .wishlists__wrapper {
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include devices(mobile) {
+      justify-content: center;
+      gap: 25px;
+    }
+    .wishlist {
+      width: 32%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      cursor: pointer;
+      @include devices(tablet) {
+        flex-wrap: wrap;
+        flex-basis: 49%;
+      }
+      @include devices(mobile) {
+        flex-basis: 100%;
+      }
+      .wishlist__img {
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        img {
+          min-width: 100%;
+        }
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}

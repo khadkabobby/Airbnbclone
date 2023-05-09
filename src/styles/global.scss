@@ -50,6 +50,11 @@ a {
       @content;
     }
   }
+  @if $breakpoint == minitablet {
+    @media only screen and (max-width: 850px) {
+      @content;
+    }
+  }
 
   @if $breakpoint == mobile {
     @media only screen and (max-width: 670px) {

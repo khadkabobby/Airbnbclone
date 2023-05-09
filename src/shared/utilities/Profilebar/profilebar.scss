@@ -1,0 +1,32 @@
+@import "../../../styles/global.scss";
+.profilebar {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  gap: 12px;
+  border-radius: 12px;
+  position: fixed;
+  z-index: 100;
+  right: 3%;
+  top: 13%;
+  :first-child {
+    margin-top: 16px;
+  }
+  :last-child {
+    margin-bottom: 16px;
+  }
+  .profile__element {
+    padding: 12px 16px;
+    cursor: pointer;
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+  @include devices(mobile) {
+    display: none;
+  }
+}

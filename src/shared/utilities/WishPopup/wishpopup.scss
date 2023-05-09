@@ -1,0 +1,67 @@
+.wishpop {
+  border: 1px solid green;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  padding-bottom: 12px;
+  .wishpop__header {
+    padding: 20px 16px;
+    display: flex;
+    width: 380px;
+    justify-content: space-between;
+    .cross__icon {
+      cursor: pointer;
+    }
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  .horizontalline {
+    border-top: 1px solid #f0ecec;
+  }
+  .wishpop__body {
+    padding: 30px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    input[type="text"] {
+      padding: 18px 15px;
+      outline: none;
+      border: 2px solid #9c9a9a;
+      border-radius: 12px;
+      &:focus {
+        border: 2px solid #000;
+      }
+    }
+
+    p {
+      font-size: 11px;
+      color: #9c9a9a;
+    }
+  }
+  .btn {
+    padding: 16px;
+    .createbtn {
+      width: 100%;
+      padding: 16px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #fff;
+      background: #333333;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .blurry-button {
+      opacity: 0.2;
+      filter: blur(0.5px);
+      cursor: not-allowed;
+    }
+  }
+}

@@ -3,6 +3,7 @@
   flex-basis: 23%;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   @include devices(tablet) {
     flex-basis: 32%;
   }

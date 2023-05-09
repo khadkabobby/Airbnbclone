@@ -1,0 +1,199 @@
+@import "../../../styles/global.scss";
+
+.reserved__card {
+  //   border: 2px solid green;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  padding: 25px 20px;
+  border-radius: 10px;
+  min-width: 100%;
+  justify-content: space-between;
+  @include devices(tablet) {
+    padding: 30px 25px;
+  }
+  @include devices(mobile) {
+    display: none;
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include devices(tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 8px;
+    }
+    .price {
+      font-size: 18px;
+      span {
+        font-weight: bold;
+        font-size: 24px;
+      }
+    }
+    .reaction {
+      display: flex;
+      justify-content: end;
+      gap: 8px;
+
+      .rating {
+        display: flex;
+        p {
+          font-size: 12px;
+          @include devices(tablet) {
+            font-size: 14px;
+          }
+        }
+      }
+      .reviews {
+        font-size: 12px;
+        color: #717171;
+        text-decoration: underline;
+        cursor: pointer;
+        @include devices(tablet) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .guest__details {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bebebe;
+    border-radius: 10px;
+    margin-top: 25px;
+    cursor: pointer;
+    .checkin-checkout {
+      display: flex;
+      border-bottom: 1px solid #bebebe;
+      //   justify-content: space-between;
+      .checkin {
+        flex-basis: 50%;
+        border-right: 1px solid #bebebe;
+        padding: 10px;
+        text-transform: uppercase;
+        @include devices(minitablet) {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        :first-child {
+          font-size: 10px;
+        }
+        :last-child {
+          font-size: 15px;
+          @include devices(minitablet) {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .checkout {
+        flex-basis: 50%;
+        padding: 10px;
+        text-transform: uppercase;
+        @include devices(minitablet) {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        :first-child {
+          font-size: 10px;
+        }
+        :last-child {
+          font-size: 15px;
+          @include devices(minitablet) {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+    .guests {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      align-items: center;
+      .number_of_guest {
+        :first-child {
+          text-transform: uppercase;
+          font-size: 10px;
+        }
+        :last-child {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .reserve__button {
+    margin: 14px auto;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: #fff;
+    font-size: large;
+    font-weight: semi-bold;
+    background-image: linear-gradient(to right, #bd1e59, #881452);
+    cursor: pointer;
+    &:hover {
+      background-image: linear-gradient(to right, #881452, #bd1e59);
+    }
+  }
+  .extra__information {
+    margin-top: 14px;
+    font-size: 15px;
+    color: #717171;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include devices(tablet) {
+      font-size: 13px;
+    }
+  }
+  .raw__calculation {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    &-1 {
+      display: flex;
+      justify-content: space-between;
+      color: #222;
+      font-weight: 300;
+      font-size: 16px;
+      @include devices(tablet) {
+        font-size: 14px;
+      }
+      .particular {
+        text-decoration: underline;
+      }
+    }
+  }
+  .horizontal__line {
+    margin: 24px auto 0;
+    color: #717171;
+  }
+  .total__calculation {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    .particular {
+      font-size: 18px;
+      font-weight: 500;
+      @include devices(tablet) {
+        font-size: 16px;
+      }
+    }
+    .rate {
+      font-size: 18px;
+      font-weight: bold;
+      @include devices(tablet) {
+        font-size: 16px;
+      }
+    }
+  }
+}

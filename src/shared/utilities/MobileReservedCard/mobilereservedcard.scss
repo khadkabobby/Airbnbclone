@@ -1,0 +1,46 @@
+@import "../../../styles/global.scss";
+.mobileReservedCard {
+  display: none;
+  width: 100%;
+  border-top: 1px solid #e7e4e4;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+  background-color: #fff;
+  @include devices(mobile) {
+    display: flex;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .rate {
+      span {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    .date {
+      font-size: 15px;
+      text-decoration: underline;
+    }
+  }
+  .right {
+    .reservedbtn {
+      border: 1px solid red;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #fff;
+      background-image: linear-gradient(to right, #bd1e59, #881452);
+      cursor: pointer;
+      &:hover {
+        background-image: linear-gradient(to right, #881452, #bd1e59);
+      }
+    }
+  }
+}
