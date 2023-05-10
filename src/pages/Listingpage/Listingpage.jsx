@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./listingpage.scss";
 import ListingCard from "../../components/ListingCard/ListingCard";
 import SuperNavbar from "../../components/SuperNavbar/SuperNavbar";

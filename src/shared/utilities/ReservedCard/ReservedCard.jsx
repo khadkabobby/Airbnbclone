@@ -1,6 +1,5 @@
 import React from "react";
 import "./reservedcard.scss";
-
 import { Icon } from "@iconify/react";
 
 const ReservedCard = () => {

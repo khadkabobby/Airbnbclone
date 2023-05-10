@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import "./housingcomp.scss";
-
 import { useParams } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addToWishlist, removeFromWishlist } from "../../store/wishListSlice";
 import { Icon } from "@iconify/react";
+
 import ReservedCard from "../../shared/utilities/ReservedCard/ReservedCard";
 import MobileReservedCard from "../../shared/utilities/MobileReservedCard/MobileReservedCard";
 import WishPopup from "../../shared/utilities/WishPopup/WishPopup";
 import HousingNavbar from "../HousingNavbar/HousingNavbar";
-import { useDispatch, useSelector } from "react-redux";
-
-import { addToWishlist, removeFromWishlist } from "../../store/wishListSlice";
 import useFetchDynamic from "../../hooks/useFetchDynamic";
 
 const HousingComp = () => {
@@ -51,8 +49,6 @@ const HousingComp = () => {
       <HousingNavbar
         handleSaveIconClick={handleSaveIconClick}
         isSaved={isSaved}
-        // savebtnHandler={savebtnHandler}
-        // handleFavoriteClick={handleFavoriteClick}
       />
       {!loading ? (
         <div className="housing__component">

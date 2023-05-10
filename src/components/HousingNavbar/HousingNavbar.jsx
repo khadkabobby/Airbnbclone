@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import "./housingnavbar.scss";
-
-import AirbnbLogo from "../../assets/airbnb.svg";
-import SearchIcon from "../../assets/SearchIcon.svg";
-
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
 
+import AirbnbLogo from "../../assets/airbnb.svg";
+import SearchIcon from "../../assets/SearchIcon.svg";
 import Profilebar from "../../shared/utilities/Profilebar/Profilebar";
 
 const HousingNavbar = ({ handleSaveIconClick, isSaved }) => {

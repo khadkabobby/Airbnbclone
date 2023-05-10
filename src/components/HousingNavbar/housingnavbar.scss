@@ -79,7 +79,6 @@ header {
       }
       @include devices(tablet) {
         width: 40%;
-        // width: 20%;
       }
       .searchIcon {
         margin-left: -15px;

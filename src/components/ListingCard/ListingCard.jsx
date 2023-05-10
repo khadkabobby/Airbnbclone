@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import "./listingcard.scss";
-
 import { Icon } from "@iconify/react";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import useFetchDynamic from "../../hooks/useFetchDynamic";
 
 const ListingCard = ({
   hotel_name,

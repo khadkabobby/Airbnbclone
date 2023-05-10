@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./mininavbar.scss";
-
 import { categories } from "../index";
-import CategorieBox from "../CategorieBox/CategorieBox";
-
 import { Icon } from "@iconify/react";
+
+import CategorieBox from "../CategorieBox/CategorieBox";
 
 const MiniNavbar = () => {
   const [leftArrow, setLeftArrow] = useState(0);

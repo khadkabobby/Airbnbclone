@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import "./wishpopup.scss";
-
 import { Icon } from "@iconify/react";
-// import { useDispatch } from "react-redux";
-// import { addToWishList } from "../../../store/wishListSlice";
-// import { useParams } from "react-router-dom";
 
 const WishPopup = ({ onCreate, onCancel, wishlistName, setWishlistName }) => {
   const handleCreateWishlist = () => {

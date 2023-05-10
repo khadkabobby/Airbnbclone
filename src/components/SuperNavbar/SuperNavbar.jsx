@@ -1,31 +1,15 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import "./supernavbar.scss";
-
+import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
 
 import AirbnbLogo from "../../assets/airbnb.svg";
 import SearchIcon from "../../assets/SearchIcon.svg";
-
-import { Icon } from "@iconify/react";
 import Profilebar from "../../shared/utilities/Profilebar/Profilebar";
-
-// useEffect(() => {
-//   function handleClickOutside(event) {
-//     if (ref.current && !ref.current.contains(event.target)) {
-//       setShowProfilebar(!showProfilebar);
-//     }
-//   }
-
-//   document.addEventListener("click", handleClickOutside);
-//   return () => {
-//     document.removeEventListener("click", handleClickOutside);
-//   };
-// }, [ref]);
 
 const SuperNavbar = () => {
   const [showProfilebar, setShowProfilebar] = useState(false);
   const navigate = useNavigate();
-  // const ref = useRef(null);
 
   const profilebarHandler = () => {
     setShowProfilebar(!showProfilebar);
