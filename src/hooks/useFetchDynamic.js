@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { fetchListingDataFromApi } from "../utils/api";
+import { fetchDataFromDynamicApi } from "../utils/api/dynamicapi";
 
-const useFetch = (url) => {
+const useFetchDynamic = (url, params) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ const useFetch = (url) => {
     setData(null);
     setError(null);
 
-    fetchListingDataFromApi(url)
+    fetchDataFromDynamicApi(url, params)
       .then((res) => {
         setLoading(false);
         setData(res);
@@ -23,4 +23,4 @@ const useFetch = (url) => {
   }, [url]);
   return { data, loading, error };
 };
-export default useFetch;
+export default useFetchDynamic;

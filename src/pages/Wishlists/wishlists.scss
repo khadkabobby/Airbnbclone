@@ -20,6 +20,7 @@
       flex-direction: column;
       gap: 12px;
       cursor: pointer;
+      position: relative;
       @include devices(tablet) {
         flex-wrap: wrap;
         flex-basis: 49%;
@@ -38,6 +39,15 @@
       }
       p {
         font-size: 20px;
+      }
+      .favoriteIcon {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 30px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
       }
     }
   }

@@ -1,42 +1,41 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState } from "react";
 import "./listingcard.scss";
 
 import { Icon } from "@iconify/react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import useFetchDynamic from "../../hooks/useFetchDynamic";
 
-const ListingCard = ({ element }) => {
-  const { url } = useSelector((state) => state.home);
+const ListingCard = ({
+  hotel_name,
+  hotel_id,
+  address,
+  max_photo_url,
+  review_score,
+  composite_price_breakdown,
+}) => {
   const navigate = useNavigate();
-  {
-    console.log(`hello ${url}`);
-  }
-  // const { name, address, description, image, star, ...rest } = element;
-  // console.log(name, address, description, image);
-  // const BaseUrl = "https://royalapi.lancemeup.com";
-  // console.log(`${BaseUrl / image}`);
   return (
     <>
-      <div className="card" onClick={() => navigate(`/hotel/${element.id}`)}>
+      <div className="card" onClick={() => navigate(`/hotel/${hotel_id}`)}>
         <div className="img">
-          <img
-            src={`https://royalapi.lancemeup.com${element.image}`}
-            alt="listing Image"
-            crossorigin="anonymous"
-          />
+          <img src={max_photo_url} alt="listing Image" />
         </div>
 
         <div className="title">
-          <h4 className="location">{element?.address}</h4>
+          <h4 className="location">{address}</h4>
           <div className="rating">
             <Icon icon="ic:outline-star" />
-            <p className="rating-point">{element?.star}</p>
+            <p className="rating-point">{review_score}</p>
           </div>
         </div>
-        <p className="owner"> Stay with Bobby Khadka . Business owner </p>
+        <p className="owner">{hotel_name}</p>
         <p className="date">Jun 18-24</p>
         <p className="price">
-          <span>$108</span> night
+          <span>
+            ${composite_price_breakdown?.gross_amount_per_night?.value}
+          </span>{" "}
+          night
         </p>
       </div>
     </>

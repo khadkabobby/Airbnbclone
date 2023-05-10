@@ -2,18 +2,20 @@ import React, { useState } from "react";
 import "./wishpopup.scss";
 
 import { Icon } from "@iconify/react";
+// import { useDispatch } from "react-redux";
+// import { addToWishList } from "../../../store/wishListSlice";
+// import { useParams } from "react-router-dom";
 
-const WishPopup = ({ showWishPoppup, setShowWishPopup, savebtnHandler }) => {
-  const [inputValue, setInputValue] = useState("");
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+const WishPopup = ({ onCreate, onCancel, wishlistName, setWishlistName }) => {
+  const handleCreateWishlist = () => {
+    onCreate(wishlistName);
   };
+
   return (
     <>
       <div className="wishpop">
         <div className="wishpop__header">
-          <div className="cross__icon" onClick={() => savebtnHandler()}>
+          <div className="cross__icon" onClick={onCancel}>
             <Icon icon="radix-icons:cross-2" />
           </div>
           <div className="title">Name this wishlist</div>
@@ -22,11 +24,9 @@ const WishPopup = ({ showWishPoppup, setShowWishPopup, savebtnHandler }) => {
         <div className="wishpop__body">
           <input
             type="text"
-            name=""
-            id=""
-            value={inputValue}
-            onChange={handleInputChange}
-            maxlength="50"
+            value={wishlistName}
+            onChange={(e) => setWishlistName(e.target.value)}
+            maxLength="50"
             placeholder="Name"
           />
           <p>50 characters maximum</p>
@@ -34,8 +34,8 @@ const WishPopup = ({ showWishPoppup, setShowWishPopup, savebtnHandler }) => {
         <hr className="horizontalline" />
         <div className="btn">
           <button
-            className={`createbtn ${inputValue ? "" : "blurry-button"}`}
-            onClick={() => savebtnHandler()}
+            className={`createbtn ${wishlistName ? "" : "blurry-button"}`}
+            onClick={handleCreateWishlist}
           >
             Create
           </button>

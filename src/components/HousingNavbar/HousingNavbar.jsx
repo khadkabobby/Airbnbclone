@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 import Profilebar from "../../shared/utilities/Profilebar/Profilebar";
 
-const HousingNavbar = ({ savebtnHandler }) => {
+const HousingNavbar = ({ handleSaveIconClick, isSaved }) => {
   const [showProfilebar, setShowProfilebar] = useState(false);
   const navigate = useNavigate();
 
@@ -44,15 +44,27 @@ const HousingNavbar = ({ savebtnHandler }) => {
                 className="archive_icon"
               />
             </div>
-            <div className="save" onClick={() => savebtnHandler()}>
-              <Icon
-                icon="mdi:favourite-border"
-                width="20"
-                height="20"
-                color="#222"
-                className="archive_icon"
-              />
-            </div>
+            {isSaved ? (
+              <div className="save" onClick={() => handleSaveIconClick()}>
+                <Icon
+                  icon="ic:outline-favorite"
+                  color="#ff385c"
+                  width="20"
+                  height="20"
+                  className="archive_icon"
+                />
+              </div>
+            ) : (
+              <div className="save" onClick={() => handleSaveIconClick()}>
+                <Icon
+                  icon="mdi:favourite-border"
+                  width="20"
+                  height="20"
+                  color="#222"
+                  className="archive_icon"
+                />
+              </div>
+            )}
           </div>
         </div>
         <div className="rightbar">
