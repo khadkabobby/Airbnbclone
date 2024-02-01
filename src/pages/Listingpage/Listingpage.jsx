@@ -7,21 +7,22 @@ import useFetchDynamic from "../../hooks/useFetchDynamic";
 
 const Listingpage = () => {
   const params = {
-    checkin_date: "2023-09-27",
-    dest_type: "city",
-    units: "metric",
-    checkout_date: "2023-09-28",
-    adults_number: "2",
-    order_by: "popularity",
-    dest_id: "-553173",
-    filter_by_currency: "AED",
-    locale: "en-gb",
-    room_number: "1",
-    children_number: "2",
-    children_ages: "5,0",
-    categories_filter_ids: "class::2,class::4,free_cancellation::1",
-    page_number: "0",
-    include_adjacency: "true",
+
+    order_by: 'popularity',
+    checkout_date: '2024-05-20',
+    filter_by_currency: 'AED',
+    locale: 'en-gb',
+    units: 'metric',
+    dest_id: '-553173',
+    dest_type: 'city',
+    adults_number: '2',
+    room_number: '1',
+    checkin_date: '2024-05-19',
+    include_adjacency: 'true',
+    page_number: '0',
+    children_number: '2',
+    categories_filter_ids: 'class::2,class::4,free_cancellation::1',
+    children_ages: '5,0'
   };
   const { data, loading } = useFetchDynamic("/search", params);
   const listingArray = data?.result;
